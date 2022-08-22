@@ -90,7 +90,7 @@
   }
   </style>
 
-  <title>SIMPEG PT.DIKA - Dashboard</title>
+  <title>PT.DIKA - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset ('/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -123,7 +123,7 @@
         <div class="sidebar-brand-icon">
           <i class="fas fa-users"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SIMPEG PT.DIKA</div>
+        <div class="sidebar-brand-text mx-3">PT.DIKA</div>
       </a>
 
       <!-- Divider -->
