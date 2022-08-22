@@ -6,7 +6,7 @@
 				<div class="container">
 					<div class="header-content d-flex justify-content-between align-items-center">
 						<div class="logo">
-							<a href="#top" class="smooth"><h1 class="brand brand-name text-white"> <i class="fa fa-users"></i> <i style="color:red">SIM</i>PEG</h1></a>
+							<a href="#top" class="smooth"><h1 class="brand brand-name text-white"> <i class="fa fa-users"></i> <i style="color:red">SIMPEG </i>PT. DIKA</h1></a>
 						</div>
 					</div>
 				</div>
@@ -61,13 +61,13 @@
                                      {{ __('Login') }}
                                 </button>
                 <br><br>
-                                            @if (Route::has('password.request'))
+                                            <!-- @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                                         {{ __('Forgot Your Password?') }}
                                                     </a>
                                                 @endif
                                         
-                                            </div>
+                                            </div> -->
 
 
 
