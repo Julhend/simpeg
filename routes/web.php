@@ -33,6 +33,7 @@ Route::post('/pegawai/tambah/proses', 'ListPegawaiController@tambah');
 Route::post('/pegawai/edit/{id}', 'ListPegawaiController@edit');
 Route::get('/pegawai/hapus/{id}','ListPegawaiController@hapus');
 Route::get('/pegawai/profile/{id}','ListPegawaiController@profile');
+Route::get('pegawai/profile/cetak/{id}', 'ListPegawaiController@cetak');
 
 Route::post('/pegawai/anak/tambah/proses', 'AnakController@proses');
 Route::post('/pegawai/orangtua/tambah/proses', 'OrangtuaController@proses');

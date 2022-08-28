@@ -2,12 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\ListPegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+// use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 class ListPegawaiController extends Controller
 {   
+    public function cetak($id)
+    {
+        // $pegawai = ListPegawai::first();
+        // $data = \App\TandaTerima::find($id);
+        $pegawai = \App\ListPegawai::where('id_peg',$id)->with([
+            'naikkgb', 'agama', 
+            'pendidikan', 'suamiistri',
+            'anak', 'orangtua',
+            'riwayatdiklat', 'riwayatdiklat.diklat',
+            'riwayatgapok', 'riwayatgapok.gapok',
+            'riwayatindisipliner','riwayatjabatan',
+            'riwayatjabatan.jabatanstruktural',
+            'riwayatjabatanf', 'riwayatjabatanf.jabatanfungsional',
+            'riwayatjabatanft', 'riwayatjabatanft.jabatanfungsionalt'
+             ])->first();
+        $pendidikans = \App\Pendidikan::all();
+        $diklat = \App\Diklat::all();
+        $edit = \App\RiwayatDiklat::where('id_peg',$id)->orderBy('id_diklat', 'desc')->first();
+        $gapok = \App\Gapok::all();
+        $jbts = \App\Jabatanstruktural::all();
+        $gol = \App\Golongan::all();
+        $jbtf = \App\JabatanFungsional::all();
+        $jbtft = \App\JabatanFungsionalt::all();
+        // dd($pegawai);
+        $pdf = PDF::loadview('pegawai.cetakpegawai', compact('pegawai','pendidikan','diklat','jbtf','jbtft','gol','gapok'));
+        return $pdf->stream();
+    }
 
     public function beranda(){
        $pegawai = \App\ListPegawai::with(['naikkgb', 'naikkgb.gapok'])->orderBy('id_peg', 'DESC')->limit(5)->get();
@@ -173,6 +203,7 @@ class ListPegawaiController extends Controller
 	return redirect('/list');
     }
 
+
     public function profile($id)
     {
 	// menghapus data pegawai berdasarkan id yang dipilih
@@ -209,5 +240,5 @@ class ListPegawaiController extends Controller
          'jbtft' => $jbtft
          ]);
     //return dd($pegawai);
-    }
+    }  
 }

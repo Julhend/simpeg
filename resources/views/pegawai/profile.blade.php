@@ -178,6 +178,10 @@
      </div>
      </div>
      <hr>
+ 
+              <!-- row 11 -->
+      <a href="cetak/{{$pegawai->id_peg}}" class="btn btn-primary btn-sm my-1 mr-sm-1 btn-block"><i class="nav-icon fas fa-print"></i> cetak</a>
+      <!-- <td><a class="btn btn-secondary" href="cetak/{{$pegawai->id_peg}}"><i class="fa fa-print"></i></a>  -->
 
           
 
