@@ -20,6 +20,9 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-plus"></i>
             </button>
+            <div class="card-body">
+           <a href="/list/cetak" class="btn btn-primary btn-sm my-1 mr-sm-1 btn-block"><i class="nav-icon fas fa-print"></i> cetak</a>
+            </button>
               <div class="table-responsive">
                 <div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" role="grid" aria-describedby="dataTable_info" style="width: 100%;" width="100%" cellspacing="0"> 
                   <thead>

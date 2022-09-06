@@ -57,6 +57,17 @@ class ListPegawaiController extends Controller
       // return response()->json(['data' => $pegawai]);
         }
 
+    public function cetakList(){
+    $pegawai = \App\ListPegawai::all();
+    $user = \App\User::all();
+    $agama = \App\Agama::all();
+    $pendidikan = \App\Pendidikan::all();
+    $jbts = \App\jabatanstruktural::all();
+
+    $pdf = PDF::loadview('pegawai.cetakListPegawai', compact('pegawai','user','pendidikan','agama','jbts'));
+    return $pdf->stream();
+    }
+    
     public function index(){
     $pegawai = \App\ListPegawai::all();
     $user = \App\User::all();
